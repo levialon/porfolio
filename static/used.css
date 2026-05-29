@@ -96,7 +96,7 @@
   --focus-offset: 2px;
 
   /* Layout */
-  --page-max: 1440px;
+  --page-max: 1280px;
 
   /* Nav accent — deep red separator line */
   --c-nav-accent: #A4392C;
@@ -192,6 +192,8 @@ button {
   padding-inline: 0;
   background: var(--c-page);
   border-bottom: 1px solid var(--c-nav-accent); /* deep red separator */
+  max-width: var(--page-max);
+  margin-inline: auto;
 }
 .wf-header__inner {
   display: flex;
@@ -657,7 +659,7 @@ border-right: 2px solid var(--c-accent);
 .pp-title-block { margin-bottom: var(--sp-6); }
 .pp-title {
   font-family: var(--font-display);
-  font-size: clamp(64px, 9vw, 140px);
+  font-size: clamp(36px, 5vw, 56px);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 0.95;
@@ -666,7 +668,7 @@ border-right: 2px solid var(--c-accent);
 }
 .pp-title-alt {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.14em;
   color: var(--c-fg-3);           /* light gray subtitle (alt title / year) */
   margin: 0;
@@ -756,7 +758,7 @@ border-right: 2px solid var(--c-accent);
 }
 
 /* Description paragraph */
-.pp-body { margin-bottom: var(--sp-9); }
+.pp-body { margin-bottom: var(--sp-9);padding-right:20px; border-right:2px solid var(--c-accent);  }
 .pp-body__copy {
   font-family: var(--font-display);
   font-size: clamp(20px, 1.8vw, 26px);
@@ -764,7 +766,6 @@ border-right: 2px solid var(--c-accent);
   line-height: 1.45;
   letter-spacing: -0.005em;
   color: var(--c-fg-1);
-  max-width: 30ch;
   margin: 0;
 }
 
@@ -859,7 +860,7 @@ border-right: 2px solid var(--c-accent);
   gap: 8px;
   padding-inline-end: var(--sp-4);
   margin-inline-end: var(--sp-4);
-  border-inline-end: 1px solid var(--c-hairline-strong);
+ // border-inline-end: 1px solid var(--c-hairline-strong);
 }
 .pp-credits__entry:last-child {
   border-inline-end: 0;
@@ -1021,6 +1022,94 @@ border-right: 2px solid var(--c-accent);
   }
 }
 
+
+/* ── 10b. PROJECT PAGE — new layout classes ──────────────────── */
+
+/* Hero */
+.pp-hero--has-trailer { cursor: pointer; }
+.pp-hero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Info row: title+meta (right) · description (left) */
+.pp-info-row {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: var(--sp-7);
+  padding-block: var(--sp-7) var(--sp-8);
+  
+}
+.pp-info-row .pp-title-block { margin: 0; }
+.pp-info-row .pp-title-alt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  margin: 0;
+}
+/* Section label — reusable right-column heading (same pattern as wf-section__label) */
+.pp-section-label { padding-top: var(--sp-2); }
+.pp-section-label__text {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--c-fg-3);
+}
+
+.pp-title-alt__sep { color: var(--c-accent); margin-inline: 4px; }
+.pp-broadcaster { opacity: .6; font-size: .9em; }
+
+/* Stills masonry grid */
+.pp-stills__masonry { columns: 3; column-gap: var(--sp-4); }
+.pp-still__item    { break-inside: avoid; margin-bottom: var(--sp-4); }
+.pp-still__img     { width: 100%; height: auto; display: block; cursor: zoom-in; }
+.pp-still__placeholder { aspect-ratio: 16 / 9; }
+
+/* Lightbox */
+#lb-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#lb-backdrop.lb-open { display: flex; }
+.lb-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  display: block;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, .6);
+}
+.lb-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  line-height: 1;
+}
+.lb-prev { left: 20px;  top: 50%; transform: translateY(-50%); font-size: 2.5rem; padding: 8px; }
+.lb-next { right: 20px; top: 50%; transform: translateY(-50%); font-size: 2.5rem; padding: 8px; }
+.lb-close { top: 16px; right: 20px; font-size: 2rem; }
+
+@media (max-width: 760px) {
+  .pp-info-row { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .pp-stills__masonry { columns: 2; }
+}
+@media (max-width: 480px) {
+  .pp-stills__masonry { columns: 1; }
+}
 
 /* ── 11. PUBLICATIONS PAGE ────────────────────────────────────── */
 
