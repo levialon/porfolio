@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="he" dir="rtl" data-theme="light" style="--c-accent: #c8741b">
+<html lang="he" dir="rtl" style="--c-accent: #c8741b">
 <head>
   <meta charset="utf-8" />
   <title>מקומות לשכוח · Places to forget — אלון לוי</title>
@@ -53,6 +53,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lunasima:wght@400;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../static/used.css" />
   
+<style>
+.pp-body__md p {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: var(--c-fg-1);
+  margin: 0 0 1em;
+}
+.pp-body__md p:last-child { margin-bottom: 0; }
+.pp-body__md strong { font-weight: 600; }
+.pp-body__md em { font-style: italic; }
+.pp-body__md a { text-decoration: underline; text-underline-offset: 3px; }
+</style>
+
   <style>html, body { background: var(--c-page); }</style>
 </head>
 <body>
@@ -61,9 +77,10 @@
     <header class="wf-header">
       <div class="wf-header__inner">
         <a class="wf-wordmark" href="../index.html" aria-label="Home">
-          <span class="wf-wordmark__en">Alon Levi</span>
-          <span class="wf-wordmark__dot">·</span>
           <span class="wf-wordmark__he">אלון לוי</span>
+          <span class="wf-wordmark__dot">·</span>
+          <span class="wf-wordmark__he">במאי, עורך ומפיק דוקו </span>   
+
         </a>
         <nav class="wf-nav">
           <a class="wf-nav__link" href="../index.html">עבודות</a>
@@ -94,19 +111,21 @@
     <div class="pp-title-block">
       <h1 class="pp-title">מקומות לשכוח</h1>
       <p class="pp-title-alt">
-        <span>תיעודי קצר</span>
-        <span>
-          <span>12 דקות</span>
-          <span class="pp-title-alt__sep">|</span>
-          <span>2018</span>
-        </span>
-        
+        תיעודי קצר
       </p>
     </div>
 
     
     <div class="pp-body">
-      <p class="pp-body__copy"></p>
+      <p class="pp-title-alt">
+        <span>
+          <span>12 דקות</span>
+          <span class="pp-title-alt__sep">|</span>
+          <span>2018</span>
+
+        </span>
+</p>
+      <div class="pp-body__md"></div>
     </div>
 
   </div>
@@ -223,6 +242,14 @@
         </div>
         <div style="display:flex;align-items:center;gap:var(--sp-4);">
           
+          <a href="http://www.facebook.com/alonlevi" target="_blank" rel="noopener" aria-label="Facebook" style="color:inherit;opacity:.6;transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          
+          
+          <a href="http://www.x.com/alonlevi" target="_blank" rel="noopener" aria-label="Twitter / X" style="color:inherit;opacity:.6;transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
           
           <a href="mailto:callmealon@gmail.com" aria-label="Email" style="color:inherit;opacity:.6;transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>

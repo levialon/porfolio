@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="he" dir="rtl" data-theme="light" style="--c-accent: #c8741b">
+<html lang="he" dir="rtl" style="--c-accent: #c8741b">
 <head>
   <meta charset="utf-8" />
   <title>מעשה בחמישה משוררים · The Deal — אלון לוי</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="" />
+  <meta name="description" content="סדרה תיעודית קצרה על חמישה משוררים בולטים ושונים מאוד במרחב הישראלי ב-2018. הסדרה עושה שימוש בשפה ויזואלית פופית כדי לבחון את נקודת המבט של כל משורר או מש…" />
   <link rel="canonical" href="https://alonlevi.com/projects/fivepoets.html" />
 
   <!-- Open Graph -->
   <meta property="og:site_name"   content="Alon Levi" />
   <meta property="og:type"        content="video.movie" />
   <meta property="og:title"       content="מעשה בחמישה משוררים · The Deal" />
-  <meta property="og:description" content="" />
+  <meta property="og:description" content="סדרה תיעודית קצרה על חמישה משוררים בולטים ושונים מאוד במרחב הישראלי ב-2018. הסדרה עושה שימוש בשפה ויזואלית פופית כדי לבחון את נקודת המבט של כל משורר או מש…" />
   <meta property="og:url"         content="https://alonlevi.com/projects/fivepoets.html" />
   
   <meta property="og:image" content="https://alonlevi.com/static/images/fivepoets/5193e4af-7717-4efe-b77f-8542d03ffbb0_rw_1920.jpg" />
@@ -37,12 +37,22 @@
   "@type": "Movie",
   "name": "The Deal",
   "alternateName": "מעשה בחמישה משוררים",
-  "description": "",
+  "description": "סדרה תיעודית קצרה על חמישה משוררים בולטים ושונים מאוד במרחב הישראלי ב-2018. הסדרה עושה שימוש בשפה ויזואלית פופית כדי לבחון את נקודת המבט של כל משורר או משוררת על אומנות, הצלחה ועל החיים עצמם.
+
+**פרקי הסדרה:**
+״איש ובהלות״ עם אלי אליהו
+״שמורת השירה של סער יכין״
+״טחול וכשלון״ עם יונית נעמן
+״משרד ההסברה סגור״ בכיכובו של רועי חסן
+״נבנה את הכל״ על המשוררת המסתורית דליה פלח
+
+[לכל הפרקים](https://www.youtube.com/playlist?list=PLRL8c3LBHOc5e2AASV_WeLFp7zqvWP_FM)",
   "director": { "@type": "Person", "name": "Alon Levi", "url": "https://alonlevi.com" },
   "dateCreated": "2018",
   "genre": "",
   "duration": "PT60M",
   "image": "https://alonlevi.com/static/images/fivepoets/5193e4af-7717-4efe-b77f-8542d03ffbb0_rw_1920.jpg",
+  "trailer": { "@type": "VideoObject", "embedUrl": "https://www.youtube.com/watch?v=LfrjbRH40_s&amp;list=PLRL8c3LBHOc5e2AASV_WeLFp7zqvWP_FM&amp;index=1" },
   "url": "https://alonlevi.com/projects/fivepoets.html"
 }
 </script>
@@ -53,6 +63,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lunasima:wght@400;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../static/used.css" />
   
+<style>
+.pp-body__md p {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: var(--c-fg-1);
+  margin: 0 0 1em;
+}
+.pp-body__md p:last-child { margin-bottom: 0; }
+.pp-body__md strong { font-weight: 600; }
+.pp-body__md em { font-style: italic; }
+.pp-body__md a { text-decoration: underline; text-underline-offset: 3px; }
+</style>
+
   <style>html, body { background: var(--c-page); }</style>
 </head>
 <body>
@@ -61,9 +87,10 @@
     <header class="wf-header">
       <div class="wf-header__inner">
         <a class="wf-wordmark" href="../index.html" aria-label="Home">
-          <span class="wf-wordmark__en">Alon Levi</span>
-          <span class="wf-wordmark__dot">·</span>
           <span class="wf-wordmark__he">אלון לוי</span>
+          <span class="wf-wordmark__dot">·</span>
+          <span class="wf-wordmark__he">במאי, עורך ומפיק דוקו </span>   
+
         </a>
         <nav class="wf-nav">
           <a class="wf-nav__link" href="../index.html">עבודות</a>
@@ -77,14 +104,37 @@
 <div class="pp-shell">
 
   
-  <div class="pp-hero"
-       >
+  <div class="pp-hero pp-hero--has-trailer"
+       data-trailer="https://www.youtube.com/watch?v=LfrjbRH40_s&amp;list=PLRL8c3LBHOc5e2AASV_WeLFp7zqvWP_FM&amp;index=1" onclick="playTrailer(this)">
     
     <img class="pp-hero__img" src="../static/images/fivepoets/5193e4af-7717-4efe-b77f-8542d03ffbb0_rw_1920.jpg" alt="מעשה בחמישה משוררים" />
     
     
+    <div class="pp-hero__playhint">
+      <svg width="10" height="11" viewBox="0 0 10 11" fill="currentColor"><path d="M1 0v11l9-5.5L1 0z"/></svg>
+      <span>נגן טריילר</span>
+    </div>
+    
   </div>
 
+  
+  <script>
+  function toEmbedUrl(url) {
+    var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/);
+    if (m) return 'https://www.youtube.com/embed/' + m[1] + '?autoplay=1';
+    m = url.match(/vimeo\.com\/(\d+)(?:\/([a-f0-9]+))?/);
+    if (m) return 'https://player.vimeo.com/video/' + m[1] + '?autoplay=1' + (m[2] ? '&h=' + m[2] : '');
+    return url;
+  }
+  function playTrailer(hero) {
+    var embedUrl = toEmbedUrl(hero.dataset.trailer);
+    var aspect = hero.offsetHeight > 0 ? hero.offsetHeight : hero.offsetWidth * 9 / 16;
+    hero.style.height = aspect + 'px';
+    hero.innerHTML = '<iframe src="' + embedUrl + '" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    hero.style.cursor = 'default';
+    hero.onclick = null;
+  }
+  </script>
   
 
   
@@ -94,21 +144,31 @@
     <div class="pp-title-block">
       <h1 class="pp-title">מעשה בחמישה משוררים</h1>
       <p class="pp-title-alt">
-        <span>סדרת רשת / סרט</span>
-        <span>
-          <span>60 דקות</span>
-          <span class="pp-title-alt__sep">|</span>
-          <span>2018</span>
-        </span>
-        
-        <span class="pp-broadcaster">מאקו 12</span>
-        
+        סדרת רשת / סרט
       </p>
     </div>
 
     
     <div class="pp-body">
-      <p class="pp-body__copy"></p>
+      <p class="pp-title-alt">
+        <span>
+          <span>60 דקות</span>
+          <span class="pp-title-alt__sep">|</span>
+          <span>2018</span>
+
+          <span class="pp-title-alt__sep">|</span>
+          <span>מאקו 12</span>
+        
+        </span>
+</p>
+      <div class="pp-body__md"><p>סדרה תיעודית קצרה על חמישה משוררים בולטים ושונים מאוד במרחב הישראלי ב-2018. הסדרה עושה שימוש בשפה ויזואלית פופית כדי לבחון את נקודת המבט של כל משורר או משוררת על אומנות, הצלחה ועל החיים עצמם.</p>
+<p><strong>פרקי הסדרה:</strong><br />
+״איש ובהלות״ עם אלי אליהו<br />
+״שמורת השירה של סער יכין״<br />
+״טחול וכשלון״ עם יונית נעמן<br />
+״משרד ההסברה סגור״ בכיכובו של רועי חסן<br />
+״נבנה את הכל״ על המשוררת המסתורית דליה פלח</p>
+<p><a href="https://www.youtube.com/playlist?list=PLRL8c3LBHOc5e2AASV_WeLFp7zqvWP_FM">לכל הפרקים</a></p></div>
     </div>
 
   </div>
@@ -315,6 +375,14 @@
         </div>
         <div style="display:flex;align-items:center;gap:var(--sp-4);">
           
+          <a href="http://www.facebook.com/alonlevi" target="_blank" rel="noopener" aria-label="Facebook" style="color:inherit;opacity:.6;transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          
+          
+          <a href="http://www.x.com/alonlevi" target="_blank" rel="noopener" aria-label="Twitter / X" style="color:inherit;opacity:.6;transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
           
           <a href="mailto:callmealon@gmail.com" aria-label="Email" style="color:inherit;opacity:.6;transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
