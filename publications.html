@@ -17,6 +17,7 @@
   <meta property="og:image" content="https://alonlevi.com/static/images/alonlevi.jpg" />
   
   <meta name="twitter:card" content="summary_large_image" />
+  <meta property="article:modified_time" content="2026-05-30" />
 
   <!-- JSON-LD: Person -->
   <script type="application/ld+json">
@@ -50,26 +51,44 @@
           <span class="wf-wordmark__he">במאי, עורך ומפיק דוקו </span>   
 
         </a>
-        <nav class="wf-nav">
+        <nav class="wf-nav" id="wf-nav">
           <a class="wf-nav__link" href="index.html">עבודות</a>
           <a class="wf-nav__link is-current" href="publications.html">פרסומים</a>
           <a class="wf-nav__link" href="about.html">אודות</a>
         </nav>
+        <button class="wf-menu-btn" id="wf-menu-btn" aria-label="תפריט" aria-expanded="false" aria-controls="wf-nav">
+          <span class="wf-menu-btn__bar"></span>
+          <span class="wf-menu-btn__bar"></span>
+          <span class="wf-menu-btn__bar"></span>
+        </button>
       </div>
     </header>
 
     
 <div class="pub-shell">
 
-  <div class="pub-title-block">
-    <h1 class="pub-title">פרסומים</h1>
-    <p class="pub-kicker">מבחר עיתונות, ראיונות וביקורות פסטיבל</p>
-  </div>
+ 
+  <div class="pp-info-row">
 
-  <ul class="pub-list">
     
+    <div class="pp-title-block">
+      <h1 class="pp-title">דברים שכתבתי</h1>
+      <p class="pp-title-alt">
+מאמרים, טורי דעות ודברים על סרטים ממקורות שונים
+      </p>
+    </div>
+
+    
+    <div class="pp-body">
+ 
     <li class="pub-item">
-      <span class="pub-item__date">05/12/2026</span>
+      <div class="pub-item__dateline">
+        <span class="pub-item__date">05/12/2026</span>
+        
+        <span class="pub-item__source">זמן ישראל</span>
+        
+      </div>
+
       <div class="pub-item__body">
         
         <h2 class="pub-item__title">
@@ -77,13 +96,16 @@
         </h2>
         <p class="pub-item__excerpt">אחת השיחות בקבוצות הוואסאפ של מפיקי ויוצרי דוקו הזעם רב. מבין בליל הדעות, תחושת הבגידה והייאוש, התחושה היא שהתחום שחווה הצלחה ציבורית מסחררת נמצא בקריסה כלכלית כמעט מוחלטת</p>
       </div>
-      <div class="pub-item__meta">
-        <a class="pub-item__read-btn" href="https://www.zman.co.il/686400/" target="_blank" rel="noopener">לקריאה · זמן ישראל</a>
-      </div>
     </li>
     
     <li class="pub-item">
-      <span class="pub-item__date">15/04/2025</span>
+      <div class="pub-item__dateline">
+        <span class="pub-item__date">15/04/2025</span>
+        
+        <span class="pub-item__source">הארץ</span>
+        
+      </div>
+
       <div class="pub-item__body">
         
         <h2 class="pub-item__title">
@@ -91,30 +113,54 @@
         </h2>
         <p class="pub-item__excerpt">האופציה הנכונה היא להבהיר לכל מי שידו על השאלטר, שלמול גליק אחד — שעובד בתשלום כדי להשמיד את היצירה הישראלית — יש מאות אזרחים שמעוניינים לצפות ולהקשיב</p>
       </div>
-      <div class="pub-item__meta">
-        <a class="pub-item__read-btn" href="https://www.haaretz.co.il/opinions/2025-04-15/ty-article-opinion/.premium/00000196-3956-dc5b-af96-79f722fb0000" target="_blank" rel="noopener">לקריאה · הארץ</a>
-      </div>
     </li>
     
     <li class="pub-item">
-      <span class="pub-item__date">13/06/2024</span>
+      <div class="pub-item__dateline">
+        <span class="pub-item__date">13/06/2024</span>
+        
+        <span class="pub-item__source">מכון ון ליר</span>
+        
+      </div>
+
       <div class="pub-item__body">
         
-        <span class="pub-item__tag">waterfront</span>
+        
+        
+        <a class="pub-item__tag" href="projects/waterfront.html">קו המים</a>
+        
         
         <h2 class="pub-item__title">
           <a class="pub-item__link" href="https://www.vanleer.org.il/%D7%9E%D7%90%D7%9E%D7%A8/%D7%94%D7%A1%D7%A8%D7%98-%D7%A7%D7%95-%D7%94%D7%9E%D7%99%D7%9D-%D7%9E%D7%99-%D7%94%D7%93%D7%95%D7%91%D7%A8-%D7%95%D7%9E%D7%99-%D7%94%D7%90%D7%97%D7%A8/?srsltid=AfmBOopvLpWDVR1nI6kjIoEFMwNtwQlbtKsUI6H3Ki6Lz5cboU3aeG1k" target="_blank" rel="noopener">הסרט &#34;קו המים&#34;: מי הדובר ומי האחר?</a>
         </h2>
         <p class="pub-item__excerpt">השאלה לגבי נקודת המבט מעלה את הדילמה של הייצוג, של הזהות, ולעתים אפילו של זהותנות – האם היוצר מחויב לייצג נקודת מבט &#34;מבפנים&#34; או שמא אפשר שיתעד חיים של אחרים בלא שיהיה חלק הקבוצה המתועדת? כיצד מושפעת היצירה מנקודת המבט הזאת?</p>
       </div>
-      <div class="pub-item__meta">
-        <a class="pub-item__read-btn" href="https://www.vanleer.org.il/%D7%9E%D7%90%D7%9E%D7%A8/%D7%94%D7%A1%D7%A8%D7%98-%D7%A7%D7%95-%D7%94%D7%9E%D7%99%D7%9D-%D7%9E%D7%99-%D7%94%D7%93%D7%95%D7%91%D7%A8-%D7%95%D7%9E%D7%99-%D7%94%D7%90%D7%97%D7%A8/?srsltid=AfmBOopvLpWDVR1nI6kjIoEFMwNtwQlbtKsUI6H3Ki6Lz5cboU3aeG1k" target="_blank" rel="noopener">לקריאה · מכון ון ליר</a>
+    </li>
+    
+    <li class="pub-item">
+      <div class="pub-item__dateline">
+        <span class="pub-item__date">25/06/2023</span>
+        
+        <span class="pub-item__source">תקריב</span>
+        
+      </div>
+
+      <div class="pub-item__body">
+        
+        <h2 class="pub-item__title">
+          <a class="pub-item__link" href="https://takriv.net/article/%D7%91%D7%A2%D7%A0%D7%99%D7%99%D7%9F-%D7%94%D7%90%D7%9E%D7%95%D7%9F/" target="_blank" rel="noopener">בעניין האמון - אמת וזיוף בעידן הארכיון המומצא</a>
+        </h2>
+        <p class="pub-item__excerpt">עניין האמון, שמור לדימויים מקום ייחודי של כבוד. הדימוי המצולם, המוסרט או המוקלט, מהווה עדות קדומה, ראשונית, למציאות כפי שאנחנו תופסים אותה. אירועים פוליטיים מקבלים ממשות רק כאשר הם מתועדים; מערכות ממשלתיות מושחתות קורסות רק כאשר ניתן לשמוע את הקלטת העבירה המפיחה בסיפור רוח חיים; האושר שלנו מקבל אשרור רק כאשר הוא מפולטר, מתועד, מנוהל ומתויג ברשתות החברתיות. אנחנו מלקטים דימויים, סופגים אותם, מפנימים אותם ומבטאים אותם מחדש כביטוי אותנטי של המציאות הפנימית שלנו.</p>
       </div>
     </li>
     
   </ul>
+      
+     </div>
 
-</div>
+  </div>
+
+ </div>
 
 
     <footer class="wf-footer" style="max-width: var(--page-max); margin-inline: auto;">
@@ -141,10 +187,36 @@
           <span>לפניות הקרנה, עיתונות וביצוע עבודות</span>
           <span>מיוצג על ידי דווקא</span>
           <span>© Alon Levi · 2026</span>
+          <span class="wf-footer__updated">עודכן 30/05/2026</span>
         </div>
       </div>
     </footer>
 
   </div>
+  <script>
+  (function () {
+    var btn = document.getElementById('wf-menu-btn');
+    var nav = document.getElementById('wf-nav');
+    if (!btn || !nav) return;
+    function openNav()  { nav.classList.add('is-open');    btn.setAttribute('aria-expanded', 'true');  btn.classList.add('is-open'); }
+    function closeNav() { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); btn.classList.remove('is-open'); }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    // Close when a nav link is tapped
+    nav.querySelectorAll('.wf-nav__link').forEach(function (a) {
+      a.addEventListener('click', closeNav);
+    });
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+    });
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+  })();
+  </script>
 </body>
 </html>

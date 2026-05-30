@@ -17,6 +17,7 @@
   <meta property="og:image" content="https://alonlevi.com/static/images/אנחנונעמודבזה/9462571f-85f6-484d-b36e-7ca27c756581_rw_1920.jpg" />
   
   <meta name="twitter:card" content="summary_large_image" />
+  <meta property="article:modified_time" content="2026-05-30" />
 
   <!-- JSON-LD: Person -->
   <script type="application/ld+json">
@@ -43,6 +44,7 @@
   "genre": "",
   "duration": "PT2M",
   "image": "https://alonlevi.com/static/images/אנחנונעמודבזה/9462571f-85f6-484d-b36e-7ca27c756581_rw_1920.jpg",
+  "trailer": { "@type": "VideoObject", "embedUrl": "https://vimeo.com/434165256?share=copy&amp;fl=sv&amp;fe=ci" },
   "url": "https://alonlevi.com/projects/אנחנו נעמוד בזה.html"
 }
 </script>
@@ -82,11 +84,16 @@
           <span class="wf-wordmark__he">במאי, עורך ומפיק דוקו </span>   
 
         </a>
-        <nav class="wf-nav">
+        <nav class="wf-nav" id="wf-nav">
           <a class="wf-nav__link" href="../index.html">עבודות</a>
           <a class="wf-nav__link" href="../publications.html">פרסומים</a>
           <a class="wf-nav__link" href="../about.html">אודות</a>
         </nav>
+        <button class="wf-menu-btn" id="wf-menu-btn" aria-label="תפריט" aria-expanded="false" aria-controls="wf-nav">
+          <span class="wf-menu-btn__bar"></span>
+          <span class="wf-menu-btn__bar"></span>
+          <span class="wf-menu-btn__bar"></span>
+        </button>
       </div>
     </header>
 
@@ -94,14 +101,57 @@
 <div class="pp-shell">
 
   
-  <div class="pp-hero"
-       >
+  <div class="pp-hero" data-trailer-url="https://vimeo.com/434165256?share=copy&amp;fl=sv&amp;fe=ci">
     
-    <img class="pp-hero__img" src="../static/images/אנחנונעמודבזה/9462571f-85f6-484d-b36e-7ca27c756581_rw_1920.jpg" alt="אנחנו נעמוד בזה" />
-    
+    <iframe src="https://player.vimeo.com/video/434165256?app_id=122963"
+            style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"></iframe>
     
   </div>
 
+  
+  <script>
+  function _showEmbedFallback() {
+    var hero = document.querySelector('.pp-hero[data-trailer-url]');
+    var url  = hero && hero.dataset.trailerUrl;
+    if (!hero || !url || hero.dataset.fallbackShown) return;
+    hero.dataset.fallbackShown = '1';
+    var isVimeo = url.includes('vimeo.com');
+    var label   = isVimeo ? 'צפה ב-Vimeo ↗' : 'צפה ב-YouTube ↗';
+    hero.innerHTML =
+      '<div style="position:absolute;inset:0;display:flex;flex-direction:column;'
+      + 'align-items:center;justify-content:center;gap:16px;background:#111;">'
+      + '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
+      + '<p style="margin:0;color:rgba(255,255,255,.55);font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;">לא ניתן להטמיע סרטון זה</p>'
+      + '<a href="' + url + '" target="_blank" rel="noopener" '
+      + 'style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;'
+      + 'background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);'
+      + 'color:#fff;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;'
+      + 'text-transform:uppercase;text-decoration:none;">'
+      + label + '</a></div>';
+  }
+
+  window.addEventListener('message', function(e) {
+    try {
+      var origin = String(e.origin);
+      var d = JSON.parse(e.data);
+
+      // Vimeo: domain/privacy error comes as event:"error" with EmbedPrivacyError
+      if (origin.includes('vimeo.com')) {
+        if (d.event === 'error' && d.data && (
+              d.data.name === 'EmbedPrivacyError' ||
+              d.data.name === 'PrivacyError' ||
+              (d.data.message && d.data.message.includes('domain'))
+            )) {
+          _showEmbedFallback();
+        }
+      }
+    } catch(_) {}
+  });
+  </script>
   
 
   
@@ -279,10 +329,36 @@
           <span>לפניות הקרנה, עיתונות וביצוע עבודות</span>
           <span>מיוצג על ידי דווקא</span>
           <span>© Alon Levi · 2026</span>
+          <span class="wf-footer__updated">עודכן 30/05/2026</span>
         </div>
       </div>
     </footer>
 
   </div>
+  <script>
+  (function () {
+    var btn = document.getElementById('wf-menu-btn');
+    var nav = document.getElementById('wf-nav');
+    if (!btn || !nav) return;
+    function openNav()  { nav.classList.add('is-open');    btn.setAttribute('aria-expanded', 'true');  btn.classList.add('is-open'); }
+    function closeNav() { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); btn.classList.remove('is-open'); }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    // Close when a nav link is tapped
+    nav.querySelectorAll('.wf-nav__link').forEach(function (a) {
+      a.addEventListener('click', closeNav);
+    });
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+    });
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+  })();
+  </script>
 </body>
 </html>

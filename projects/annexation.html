@@ -17,6 +17,7 @@
   <meta property="og:image" content="https://alonlevi.com/static/images/annexation/4415cb39-d62c-4a19-a7ab-3495d99bfe52_rw_1920.jpeg" />
   
   <meta name="twitter:card" content="summary_large_image" />
+  <meta property="article:modified_time" content="2026-05-30" />
 
   <!-- JSON-LD: Person -->
   <script type="application/ld+json">
@@ -43,7 +44,7 @@
   "genre": "",
   "duration": "PT8M",
   "image": "https://alonlevi.com/static/images/annexation/4415cb39-d62c-4a19-a7ab-3495d99bfe52_rw_1920.jpeg",
-  "trailer": { "@type": "VideoObject", "embedUrl": "https://vimeo.com/manage/videos/434182904?fl=pl&amp;fe=vl" },
+  "trailer": { "@type": "VideoObject", "embedUrl": "https://vimeo.com/434172706?share=copy&amp;fl=sv&amp;fe=ci" },
   "url": "https://alonlevi.com/projects/annexation.html"
 }
 </script>
@@ -83,11 +84,16 @@
           <span class="wf-wordmark__he">במאי, עורך ומפיק דוקו </span>   
 
         </a>
-        <nav class="wf-nav">
+        <nav class="wf-nav" id="wf-nav">
           <a class="wf-nav__link" href="../index.html">עבודות</a>
           <a class="wf-nav__link" href="../publications.html">פרסומים</a>
           <a class="wf-nav__link" href="../about.html">אודות</a>
         </nav>
+        <button class="wf-menu-btn" id="wf-menu-btn" aria-label="תפריט" aria-expanded="false" aria-controls="wf-nav">
+          <span class="wf-menu-btn__bar"></span>
+          <span class="wf-menu-btn__bar"></span>
+          <span class="wf-menu-btn__bar"></span>
+        </button>
       </div>
     </header>
 
@@ -95,16 +101,12 @@
 <div class="pp-shell">
 
   
-  <div class="pp-hero" data-trailer-url="https://vimeo.com/manage/videos/434182904?fl=pl&amp;fe=vl">
+  <div class="pp-hero" data-trailer-url="https://vimeo.com/434172706?share=copy&amp;fl=sv&amp;fe=ci">
     
-      
-      
-      
-        
-      
-    <iframe src="https://vimeo.com/manage/videos/434182904?fl=pl&amp;fe=vl"
+    <iframe src="https://player.vimeo.com/video/434172706?app_id=122963"
             style="position:absolute;inset:0;width:100%;height:100%;border:0;"
-            allow="fullscreen; picture-in-picture"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
             loading="lazy"></iframe>
     
@@ -136,12 +138,6 @@
     try {
       var origin = String(e.origin);
       var d = JSON.parse(e.data);
-
-      // YouTube: errors 100 (not found), 101/150 (embed blocked by owner)
-      if (origin.includes('youtube.com')) {
-        var err = d && d.info && d.info.error;
-        if (err === 100 || err === 101 || err === 150) { _showEmbedFallback(); }
-      }
 
       // Vimeo: domain/privacy error comes as event:"error" with EmbedPrivacyError
       if (origin.includes('vimeo.com')) {
@@ -363,10 +359,36 @@
           <span>לפניות הקרנה, עיתונות וביצוע עבודות</span>
           <span>מיוצג על ידי דווקא</span>
           <span>© Alon Levi · 2026</span>
+          <span class="wf-footer__updated">עודכן 30/05/2026</span>
         </div>
       </div>
     </footer>
 
   </div>
+  <script>
+  (function () {
+    var btn = document.getElementById('wf-menu-btn');
+    var nav = document.getElementById('wf-nav');
+    if (!btn || !nav) return;
+    function openNav()  { nav.classList.add('is-open');    btn.setAttribute('aria-expanded', 'true');  btn.classList.add('is-open'); }
+    function closeNav() { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); btn.classList.remove('is-open'); }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    // Close when a nav link is tapped
+    nav.querySelectorAll('.wf-nav__link').forEach(function (a) {
+      a.addEventListener('click', closeNav);
+    });
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+    });
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+  })();
+  </script>
 </body>
 </html>

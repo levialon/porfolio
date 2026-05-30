@@ -17,6 +17,7 @@
   <meta property="og:image" content="https://alonlevi.com/static/images/waterfront/4f9a1e34-0902-4aaf-8675-87045d756d11_rw_1920.jpg" />
   
   <meta name="twitter:card" content="summary_large_image" />
+  <meta property="article:modified_time" content="2026-05-30" />
 
   <!-- JSON-LD: Person -->
   <script type="application/ld+json">
@@ -39,7 +40,10 @@
   "alternateName": "קו המים",
   "description": "בחום הלוהט של עמק בית שאן, קבוצת פעילים נאבקת על זכות הציבור לגישה למשאב טבע ציבורי. דרישתם היא אחת: לפתוח את שערי קיבוץ ניר דוד על מנת שכולם יוכלו ליהנות ממימי נחל האסי הזורם דרכו, כפי שהחוק מאפשר. מהצד השני של השער – חברי הקיבוץ שחוששים משינוי ומפגיעה במרקם חייהם.
 
-במאי הסרט מתלווה אל הפעילים ומתעד מקרוב את המחאה המחריפה בשטח, בבתי המשפט ובשיח הציבורי. המאבק העיקש מעלה שאלות על שוויון, חוק וצדק חלוקתי שחורגות הרבה מעבר לגבולות העמק.",
+במאי הסרט מתלווה אל הפעילים ומתעד מקרוב את המחאה המחריפה בשטח, בבתי המשפט ובשיח הציבורי. המאבק העיקש מעלה שאלות על שוויון, חוק וצדק חלוקתי שחורגות הרבה מעבר לגבולות העמק.
+
+==זוכה פרס הסרט הטוב ביותר 2024==
+==דוקאביב 2024==",
   "director": { "@type": "Person", "name": "Alon Levi", "url": "https://alonlevi.com" },
   "dateCreated": "2024",
   "genre": "Feature documentary",
@@ -85,11 +89,16 @@
           <span class="wf-wordmark__he">במאי, עורך ומפיק דוקו </span>   
 
         </a>
-        <nav class="wf-nav">
+        <nav class="wf-nav" id="wf-nav">
           <a class="wf-nav__link" href="../index.html">עבודות</a>
           <a class="wf-nav__link" href="../publications.html">פרסומים</a>
           <a class="wf-nav__link" href="../about.html">אודות</a>
         </nav>
+        <button class="wf-menu-btn" id="wf-menu-btn" aria-label="תפריט" aria-expanded="false" aria-controls="wf-nav">
+          <span class="wf-menu-btn__bar"></span>
+          <span class="wf-menu-btn__bar"></span>
+          <span class="wf-menu-btn__bar"></span>
+        </button>
       </div>
     </header>
 
@@ -97,36 +106,56 @@
 <div class="pp-shell">
 
   
-  <div class="pp-hero pp-hero--has-trailer"
-       data-trailer="https://www.youtube.com/watch?v=iCv6X_a4vpA" onclick="playTrailer(this)">
+  <div class="pp-hero" data-trailer-url="https://www.youtube.com/watch?v=iCv6X_a4vpA">
     
-    <img class="pp-hero__img" src="../static/images/waterfront/4f9a1e34-0902-4aaf-8675-87045d756d11_rw_1920.jpg" alt="קו המים" />
-    
-    
-    <div class="pp-hero__playhint">
-      <svg width="10" height="11" viewBox="0 0 10 11" fill="currentColor"><path d="M1 0v11l9-5.5L1 0z"/></svg>
-      <span>נגן טריילר</span>
-    </div>
+    <iframe src="https://www.youtube.com/embed/iCv6X_a4vpA?rel=0"
+            style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            loading="lazy"></iframe>
     
   </div>
 
   
   <script>
-  function toEmbedUrl(url) {
-    var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/);
-    if (m) return 'https://www.youtube.com/embed/' + m[1] + '?autoplay=1';
-    m = url.match(/vimeo\.com\/(\d+)(?:\/([a-f0-9]+))?/);
-    if (m) return 'https://player.vimeo.com/video/' + m[1] + '?autoplay=1' + (m[2] ? '&h=' + m[2] : '');
-    return url;
+  function _showEmbedFallback() {
+    var hero = document.querySelector('.pp-hero[data-trailer-url]');
+    var url  = hero && hero.dataset.trailerUrl;
+    if (!hero || !url || hero.dataset.fallbackShown) return;
+    hero.dataset.fallbackShown = '1';
+    var isVimeo = url.includes('vimeo.com');
+    var label   = isVimeo ? 'צפה ב-Vimeo ↗' : 'צפה ב-YouTube ↗';
+    hero.innerHTML =
+      '<div style="position:absolute;inset:0;display:flex;flex-direction:column;'
+      + 'align-items:center;justify-content:center;gap:16px;background:#111;">'
+      + '<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
+      + '<p style="margin:0;color:rgba(255,255,255,.55);font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;">לא ניתן להטמיע סרטון זה</p>'
+      + '<a href="' + url + '" target="_blank" rel="noopener" '
+      + 'style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;'
+      + 'background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);'
+      + 'color:#fff;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;'
+      + 'text-transform:uppercase;text-decoration:none;">'
+      + label + '</a></div>';
   }
-  function playTrailer(hero) {
-    var embedUrl = toEmbedUrl(hero.dataset.trailer);
-    var aspect = hero.offsetHeight > 0 ? hero.offsetHeight : hero.offsetWidth * 9 / 16;
-    hero.style.height = aspect + 'px';
-    hero.innerHTML = '<iframe src="' + embedUrl + '" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
-    hero.style.cursor = 'default';
-    hero.onclick = null;
-  }
+
+  window.addEventListener('message', function(e) {
+    try {
+      var origin = String(e.origin);
+      var d = JSON.parse(e.data);
+
+      // Vimeo: domain/privacy error comes as event:"error" with EmbedPrivacyError
+      if (origin.includes('vimeo.com')) {
+        if (d.event === 'error' && d.data && (
+              d.data.name === 'EmbedPrivacyError' ||
+              d.data.name === 'PrivacyError' ||
+              (d.data.message && d.data.message.includes('domain'))
+            )) {
+          _showEmbedFallback();
+        }
+      }
+    } catch(_) {}
+  });
   </script>
   
 
@@ -155,7 +184,9 @@
         </span>
 </p>
       <div class="pp-body__md"><p>בחום הלוהט של עמק בית שאן, קבוצת פעילים נאבקת על זכות הציבור לגישה למשאב טבע ציבורי. דרישתם היא אחת: לפתוח את שערי קיבוץ ניר דוד על מנת שכולם יוכלו ליהנות ממימי נחל האסי הזורם דרכו, כפי שהחוק מאפשר. מהצד השני של השער – חברי הקיבוץ שחוששים משינוי ומפגיעה במרקם חייהם.</p>
-<p>במאי הסרט מתלווה אל הפעילים ומתעד מקרוב את המחאה המחריפה בשטח, בבתי המשפט ובשיח הציבורי. המאבק העיקש מעלה שאלות על שוויון, חוק וצדק חלוקתי שחורגות הרבה מעבר לגבולות העמק.</p></div>
+<p>במאי הסרט מתלווה אל הפעילים ומתעד מקרוב את המחאה המחריפה בשטח, בבתי המשפט ובשיח הציבורי. המאבק העיקש מעלה שאלות על שוויון, חוק וצדק חלוקתי שחורגות הרבה מעבר לגבולות העמק.</p>
+<p><mark>זוכה פרס הסרט הטוב ביותר 2024</mark><br />
+<mark>דוקאביב 2024</mark></p></div>
     </div>
 
   </div>
@@ -285,15 +316,28 @@
       <div id="vid-modal" style="display:none;position:fixed;inset:0;z-index:9998;background:rgba(0,0,0,.82);align-items:center;justify-content:center;"
            onclick="closeVideoModal()">
         <div style="position:relative;width:min(90vw,1100px);aspect-ratio:16/9;" onclick="event.stopPropagation()">
-          <iframe id="vid-iframe" src="" allow="autoplay;fullscreen;picture-in-picture" allowfullscreen
+          <iframe id="vid-iframe" src=""
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
                   style="position:absolute;inset:0;width:100%;height:100%;border:0;"></iframe>
           <button onclick="closeVideoModal()" style="position:absolute;top:-36px;inset-inline-end:0;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;line-height:1;">×</button>
         </div>
       </div>
 
       <script>
+      function toEmbedUrl(url) {
+        var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/);
+        if (m) return 'https://www.youtube.com/embed/' + m[1] + '?rel=0&enablejsapi=1';
+        // Vimeo: hash can be any alphanumeric string (not just hex)
+        m = url.match(/vimeo\.com\/(\d+)(?:\/([a-zA-Z0-9]+))?/);
+        if (m) return 'https://player.vimeo.com/video/' + m[1]
+          + (m[2] ? '?h=' + m[2] + '&' : '?')
+          + 'badge=0&autopause=0&player_id=0&app_id=58479';
+        return url;
+      }
       function openVideoOrLink(e, a) {
-        var embedUrl = typeof toEmbedUrl === 'function' ? toEmbedUrl(a.href) : null;
+        var embedUrl = toEmbedUrl(a.href);
         if (embedUrl && embedUrl !== a.href) {
           e.preventDefault();
           var modal = document.getElementById('vid-modal');
@@ -359,10 +403,36 @@
           <span>לפניות הקרנה, עיתונות וביצוע עבודות</span>
           <span>מיוצג על ידי דווקא</span>
           <span>© Alon Levi · 2026</span>
+          <span class="wf-footer__updated">עודכן 30/05/2026</span>
         </div>
       </div>
     </footer>
 
   </div>
+  <script>
+  (function () {
+    var btn = document.getElementById('wf-menu-btn');
+    var nav = document.getElementById('wf-nav');
+    if (!btn || !nav) return;
+    function openNav()  { nav.classList.add('is-open');    btn.setAttribute('aria-expanded', 'true');  btn.classList.add('is-open'); }
+    function closeNav() { nav.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); btn.classList.remove('is-open'); }
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      nav.classList.contains('is-open') ? closeNav() : openNav();
+    });
+    // Close when a nav link is tapped
+    nav.querySelectorAll('.wf-nav__link').forEach(function (a) {
+      a.addEventListener('click', closeNav);
+    });
+    // Close on outside click
+    document.addEventListener('click', function (e) {
+      if (!nav.contains(e.target) && !btn.contains(e.target)) closeNav();
+    });
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeNav();
+    });
+  })();
+  </script>
 </body>
 </html>
